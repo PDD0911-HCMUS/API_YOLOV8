@@ -4,5 +4,7 @@ __pycache__
 road_signs
 road_signs.zip
 wandb
-datasets
+datasets/*
 runs
+
+.venv/*

@@ -1,4 +1,5 @@
 from ultralytics import YOLO
+import ConfigTraining as cf
 
 def ValidParam(param):
     modelName = modelName or 'yolov8m.pt'
@@ -9,24 +10,20 @@ def ValidParam(param):
     return param 
 
 def TrainYOLOv8Controller(
-        modelName,
-        epochs,
-        save,
-        device,
-        optimize,      
-        dataYaml
 ):
-    if(dataYaml is None):
+    if(cf.YoloV8Train['data'] is None):
         return "data yaml is required !!!"
     # Load a model
-    model = YOLO(modelName) # pretrained YOLOv8n model
-
+    model = YOLO(cf.YoloV8TrainModel['model']) # pretrained YOLOv8n model
+    print(cf.YoloV8Train.items())
     history = model.train(
-        data="data.yaml", 
-        epochs=epochs, 
-        save=save, 
-        device=device, 
-        optimize=True
+        epochs= cf.YoloV8Train['epochs'],
+        save= cf.YoloV8Train['save'],
+        device= cf.YoloV8Train['device'],
+        data= cf.YoloV8Train['data'],
+        patience= cf.YoloV8Train['patience'],
+        save_period = cf.YoloV8Train['save_period'],
+        optimizer = cf.YoloV8Train['optimizer']
     )
 
     print("History Information: ", history)

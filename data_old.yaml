@@ -1,0 +1,19 @@
+#Path to train folder
+train: ../datasets/train/images 
+
+#Path to validation folder
+val: ../datasets/valid/images 
+
+#number of class
+nc: 21 
+
+#name of class
+names: ['bus_stop', 'do_not_enter', 'do_not_stop', 'do_not_turn_l', 'do_not_turn_r', 'do_not_u_turn', 'enter_left_lane', 'green_light', 'left_right_lane', 'no_parking', 'parking', 'ped_crossing', 'ped_zebra_cross', 'railway_crossing', 'red_light', 'stop', 't_intersection_l', 'traffic_light', 'u_turn', 'warning', 'yellow_light']
+
+#datasets_dir: /API_YOLOV8/datasets
+weights_dir: weights
+runs_dir: runs
+uuid: 19f4b7bdcb6de76c106d3753782f8d8cc0eb21b16998e748572382f5d626ba28
+sync: true
+api_key: ''
+settings_version: 0.0.3

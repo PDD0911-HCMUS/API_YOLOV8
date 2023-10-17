@@ -1,0 +1,6 @@
+Flask
+Flask_Cors
+numpy
+Pillow
+scikit-image
+ultralytics

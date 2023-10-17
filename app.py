@@ -33,29 +33,36 @@ def Detect_YOLOv8_Controller():
         return {'result': e}
 
 
+# @app.route('/Training_YOLOV8_Controller', methods=['GET'])
+# def Training_YOLOv8_Controller():
+#     param = request.get_json()
+#     print(param)
+#     modelName = param["modelName"]
+#     epochs = param["epochs"]
+#     save = param["save"]
+#     device = param["device"]
+#     optimize = param["optimize"]      
+#     dataYaml = param["dataYaml"]
+
+#     if save == 'True':
+#         save = True
+#     else:
+#         save = False
+
+#     responseYOLOv8 = TrainYOLOv8Controller(
+#                         modelName,
+#                         epochs,
+#                         save,
+#                         device,
+#                         optimize,      
+#                         dataYaml)
+
+#     return {'result': responseYOLOv8}
+
 @app.route('/Training_YOLOV8_Controller', methods=['POST'])
-def Training_YOLOv8_Controller():
-    param = request.get_json()
-    print(param)
-    modelName = param["modelName"]
-    epochs = param["epochs"]
-    save = param["save"]
-    device = param["device"]
-    optimize = param["optimize"]      
-    dataYaml = param["dataYaml"]
+def Training_YOLOV8_Controller():
 
-    if save == 'True':
-        save = True
-    else:
-        save = False
-
-    responseYOLOv8 = TrainYOLOv8Controller(
-                        modelName,
-                        epochs,
-                        save,
-                        device,
-                        optimize,      
-                        dataYaml)
+    responseYOLOv8 = TrainYOLOv8Controller()
 
     return {'result': responseYOLOv8}
     
